@@ -1,0 +1,26 @@
+res = user1.outgoing(:following).find_all
+res.count.times do
+  res.next
+end
+
+user4.outgoing(:posts) << post4
+t = user1.outgoing(:following).depth(2).outgoing(:posts).depth(2).each{|node| puts node[:title]}
+
+
+ t = @neo.execute_script("g.v(1).out('following').out('posts')")
+
+ post4 = Neography::Node.create("title" => "amy's post")
+
+
+ user4.outgoing(:posts) << post4
+
+
+  t = @neo.execute_script("g.v(1).out('following').out('posts').sort{-it.created_at}._()[0..99]")
+  t = @neo.execute_script("g.idx('users')[[id:'1']].out('followings').out('posts').sort{-it.created_at}._()[0..99]")
+g.idx('users')[[id:'1']]
+
+t= @neo.execute_query("start n=node:users(id=\"1\") return n")
+t['data'][0][0]['data']
+
+t= @neo.execute_query("start n=node:users(id=\"1\") match n-[:followings]->()return n")
+start u=node:users(id="133") match u-[:followings]->followers-[:posts]->newsfeed return newsfeed order by newsfeed.created_at desc limit 100
