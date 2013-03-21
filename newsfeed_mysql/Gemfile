@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'faker'
 gem 'randumb'
 gem 'activerecord-import'
+gem 'therubyracer'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
