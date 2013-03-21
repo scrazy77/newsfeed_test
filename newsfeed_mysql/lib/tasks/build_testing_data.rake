@@ -13,9 +13,9 @@ end
 
 
 class Newsfeed
-  @user_counts = 5000
+  @user_counts = 10000
   @followers_per_user = 100
-  @post_per_user = 50
+  @post_per_user = 100
   def self.benchmark
     require 'benchmark'
     measurement = Benchmark.measure do

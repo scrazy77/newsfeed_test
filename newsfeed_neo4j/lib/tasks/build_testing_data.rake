@@ -12,9 +12,9 @@ namespace :newsfeed  do
 end
 
 class Newsfeed
-  @user_counts = 1000
+  @user_counts = 10000
   @followers_per_user = 100
-  @post_per_user = 50
+  @post_per_user = 100
   @neo = Neography::Rest.new
   def self.benchmark
     require 'benchmark'
